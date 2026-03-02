@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/edit-profile.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <span>AmatsheZulu</span>
+            </a>
+            <a href="student-dashboard.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Edit Profile</h1>
+            <p>Update your personal information and preferences</p>
+        </div>
+
+        <div class="profile-layout">
+            <!-- Sidebar -->
+            <div class="profile-sidebar">
+                <div class="profile-photo-section">
+                    <img src="userProfile/default.jpg" alt="Profile" class="profile-avatar-large" id="profilePreview">
+                    <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                    <button class="upload-btn" onclick="document.getElementById('photoInput').click()">
+                        <i class="fas fa-camera"></i> Change Photo
+                    </button>
+                    <button class="remove-btn">
+                        <i class="fas fa-trash"></i> Remove Photo
+                    </button>
+                </div>
+
+                <div class="upload-requirements">
+                    <h4>Photo Requirements</h4>
+                    <ul>
+                        <li>Square image (1:1 ratio)</li>
+                        <li>Maximum size: 2MB</li>
+                        <li>Formats: JPG, PNG</li>
+                        <li>Clear face photo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <form action="includes/update-profile.php" method="POST" id="profileForm">
+                    
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-user"></i>
+                            Personal Information
+                        </h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" name="first_name" value="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" name="last_name" value="Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" name="dob" value="2008-03-15" disabled>
+                                <p class="help-text">Contact admin to update</p>
+                            </div>
+                            <div class="form-group">
+                                <label>ID Number</label>
+                                <input type="text" value="080315****083" disabled>
+                                <p class="help-text">Contact admin to update</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select name="gender" disabled>
+                                    <option value="Male" selected>Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                <p class="help-text">Contact admin to update</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Home Language</label>
+                                <input type="text" name="home_language" value="IsiZulu">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-phone"></i>
+                            Contact Information
+                        </h2>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Email Address <span class="required">*</span></label>
+                                <input type="email" name="email" value="john.smith@student.amatshezulu.edu" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" name="phone" value="+27 XX XXX XXXX">
+                            </div>
+                            <div class="form-group">
+                                <label>Emergency Contact</label>
+                                <input type="tel" name="emergency_contact" value="+27 XX XXX XXXX">
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Residential Address</label>
+                                <textarea name="address" rows="3">123 Main Street, Hammarsdale, 3710</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Academic Information
+                        </h2>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Academic information can only be updated by the administration office.</span>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Current Grade</label>
+                                <input type="text" value="Grade 11" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Stream</label>
+                                <input type="text" value="Science" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Student ID</label>
+                                <input type="text" value="2025001234" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Class Teacher</label>
+                                <input type="text" value="Mrs. Nkosi" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Change Password -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-lock"></i>
+                            Change Password
+                        </h2>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Current Password</label>
+                                <input type="password" name="current_password" placeholder="Enter current password">
+                            </div>
+                            <div class="form-group">
+                                <label>New Password</label>
+                                <input type="password" name="new_password" id="newPassword" placeholder="Enter new password">
+                                <div class="password-strength">
+                                    <div class="password-strength-bar" id="passwordStrength"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm New Password</label>
+                                <input type="password" name="confirm_password" placeholder="Confirm new password">
+                            </div>
+                        </div>
+                        <p class="help-text">Leave blank if you don't want to change your password</p>
+                    </div>
+
+                    <!-- Parent/Guardian Information -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-users"></i>
+                            Parent/Guardian Information
+                        </h2>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i>
+                            <span>To update parent/guardian information, please contact the administration office.</span>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Guardian Name</label>
+                                <input type="text" value="Jane Smith" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Relationship</label>
+                                <input type="text" value="Mother" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Guardian Phone</label>
+                                <input type="tel" value="+27 XX XXX XXXX" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Guardian Email</label>
+                                <input type="email" value="jane.smith@email.com" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Save Changes
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/edit-profilr.js"></script>
+</body>
+</html>

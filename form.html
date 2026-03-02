@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <span>AmatsheZulu</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Student Application Form</h1>
+        <p>Complete all sections to apply for admission</p>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> Important Information</h3>
+            <p>Please complete this form in full. All changes should be initialed or signed by parent/guardian. Completing the form does not necessarily mean that the learner has been accepted into the school. Required fields are marked with <span class="required">*</span></p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Learner Info</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Address</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Parent/Guardian</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Medical</div>
+                </div>
+                <div class="step" data-step="5">
+                    <div class="step-circle">5</div>
+                    <div class="step-label">Declaration</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <form action="includes/registration.inc.php" method="POST" id="applicationForm">
+                
+                <!-- Step 1: Learner Details -->
+                <div class="form-section active" data-section="1">
+                    <h2 class="section-title">Learner Details</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Grade Applying For <span class="required">*</span></label>
+                            <select name="Grade_applying" required>
+                                <option value="">Select Grade</option>
+                                <option value="grade_8">Grade 8</option>
+                                <option value="grade_9">Grade 9</option>
+                                <option value="grade_10">Grade 10</option>
+                                <option value="grade_11">Grade 11</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Highest Grade Passed <span class="required">*</span></label>
+                            <select name="gradePassed" required>
+                                <option value="">Select Grade</option>
+                                <option value="grade_7">Grade 7</option>
+                                <option value="grade_8">Grade 8</option>
+                                <option value="grade_9">Grade 9</option>
+                                <option value="grade_10">Grade 10</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Year Grade Passed <span class="required">*</span></label>
+                            <input type="text" name="grade_year_passed" placeholder="YYYY" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Accession No</label>
+                            <input type="text" name="accesion_number" placeholder="Accession Number">
+                        </div>
+                        <div class="form-group">
+                            <label>Surname <span class="required">*</span></label>
+                            <input type="text" name="surname" placeholder="Surname" required>
+                        </div>
+                        <div class="form-group">
+                            <label>First Name <span class="required">*</span></label>
+                            <input type="text" name="first_name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Other Names</label>
+                            <input type="text" name="other_name" placeholder="Other Names">
+                        </div>
+                        <div class="form-group">
+                            <label>Initials</label>
+                            <input type="text" name="Initials" placeholder="Initials">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth <span class="required">*</span></label>
+                            <input type="date" name="date_of_birth" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ID Number <span class="required">*</span></label>
+                            <input type="text" name="IDnumber_student" placeholder="ID or Passport Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender <span class="required">*</span></label>
+                            <select name="student_Gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Race</label>
+                            <select name="student_Race">
+                                <option value="">Select Race</option>
+                                <option value="African">African</option>
+                                <option value="Asian">Asian</option>
+                                <option value="Indian">Indian</option>
+                                <option value="Coloured">Coloured</option>
+                                <option value="White">White</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" name="email" placeholder="learner@example.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Address Details -->
+                <div class="form-section" data-section="2">
+                    <h2 class="section-title">Learner Address & Contact</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label>Physical Address <span class="required">*</span></label>
+                            <input type="text" name="Physical_address" placeholder="Street Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>City/Suburb <span class="required">*</span></label>
+                            <input type="text" name="student_city_surbub" placeholder="City/Suburb" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Home Telephone</label>
+                            <input type="tel" name="home_telephone_student" placeholder="Home Phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Emergency Contact <span class="required">*</span></label>
+                            <input type="tel" name="Emergency_number_student" placeholder="Emergency Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Home Language <span class="required">*</span></label>
+                            <input type="text" name="home_language_student" placeholder="Home Language" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Previous School Name <span class="required">*</span></label>
+                            <input type="text" name="Name_Of_Previous_School" placeholder="Name of Previous School" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Previous School Address</label>
+                            <input type="text" name="Previous_School_Address" placeholder="Previous School Address">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Parent/Guardian Details -->
+                <div class="form-section" data-section="3">
+                    <h2 class="section-title">Parent/Guardian Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Title <span class="required">*</span></label>
+                            <select name="parent_title" required>
+                                <option value="">Select Title</option>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Miss">Miss</option>
+                                <option value="Dr">Dr</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>First Name <span class="required">*</span></label>
+                            <input type="text" name="parent_first_name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Surname <span class="required">*</span></label>
+                            <input type="text" name="parent_surname" placeholder="Surname" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ID Number <span class="required">*</span></label>
+                            <input type="text" name="parent_id_number" placeholder="ID Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Relationship to Learner <span class="required">*</span></label>
+                            <input type="text" name="relationship_to_learner" placeholder="e.g., Mother, Father, Guardian" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Occupation</label>
+                            <input type="text" name="parent_Occupation" placeholder="Occupation">
+                        </div>
+                        <div class="form-group">
+                            <label>Cell Number <span class="required">*</span></label>
+                            <input type="tel" name="parent_cell_phonenumber" placeholder="Cell Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Work Telephone</label>
+                            <input type="tel" name="work_telephone" placeholder="Work Phone">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Residential Address</label>
+                            <input type="text" name="Residential_Street_address" placeholder="Street Address">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Medical Information -->
+                <div class="form-section" data-section="4">
+                    <h2 class="section-title">Medical Information (Optional)</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Does learner have medical conditions?</label>
+                            <select name="medical_aid">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>If yes, please describe</label>
+                            <textarea name="medical_aid_name" placeholder="Describe any medical conditions"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Requires counseling?</label>
+                            <select name="special_problem">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>If yes, please describe</label>
+                            <textarea name="Medical_problem" placeholder="Describe counseling needs"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Receives Social Grant?</label>
+                            <select name="social_grant">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Declaration -->
+                <div class="form-section" data-section="5">
+                    <h2 class="section-title">Declaration</h2>
+                    <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <p style="line-height: 1.8; color: var(--text-light);">
+                            I hereby declare that to the best of my knowledge, the above information as supplied is accurate and correct. I understand that providing false information may result in the application being declined.
+                        </p>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Parent/Guardian Name <span class="required">*</span></label>
+                            <input type="text" name="parent_name_signature" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Initials <span class="required">*</span></label>
+                            <input type="text" name="Initials_parent_signature" placeholder="Initials" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date <span class="required">*</span></label>
+                            <input type="date" name="sign_date" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="button-container">
+                    <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button type="button" class="btn btn-primary" id="nextBtn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">
+                        <i class="fas fa-check"></i> Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024-2025 AmatsheZulu High School. All Rights Reserved.</p>
+    </footer>
+
+   <script src="js/form.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/dashboard.js"></script>
+</body>
+</html>

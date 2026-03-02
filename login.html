@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Portal - AmatsheZulu High School</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Container -->
+    <div class="login-container" id="loginContainer">
+        <!-- Sidebar -->
+        <div class="login-sidebar">
+            <h2 id="sidebarTitle">Welcome Back!</h2>
+            <p id="sidebarText">Access your student portal to view grades, assignments, and school updates.</p>
+            <ul class="features">
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>View Your Results</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Access Resources</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Stay Updated</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Manage Profile</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form-container">
+            <div class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <h1 id="portalTitle">Student Portal</h1>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="student">Student</button>
+                <button class="tab" data-tab="parent">Parent</button>
+                <button class="tab" id="adminTab" style="display: none;" data-tab="admin">Admin</button>
+            </div>
+
+            <!-- Student Login -->
+            <div class="form-content active" id="studentForm">
+                <form action="includes/login.inc.php" method="POST">
+                    <div class="form-group">
+                        <label>ID Number</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" name="idnumber" placeholder="Enter your ID number" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="pwd" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" name="login" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                    <div class="divider">OR</div>
+                    <div class="signup-link">
+                        Don't have an account? <a href="student-registration.html">Register Here</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Parent Login -->
+            <div class="form-content" id="parentForm">
+                <form action="includes/parent-login.inc.php" method="POST">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="pwd" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" name="parentLogin" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Parent Sign In
+                    </button>
+                    <div class="divider">OR</div>
+                    <div class="signup-link">
+                        Don't have an account? <a href="parent-registration.html">Register as Parent</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Admin Login -->
+            <div class="form-content" id="adminForm">
+                <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid #f59e0b;">
+                    <p style="color: #92400e; font-size: 0.9rem;">
+                        <i class="fas fa-shield-alt"></i> <strong>Admin Access:</strong> This area is restricted to authorized personnel only.
+                    </p>
+                </div>
+                <form action="includes/admin-login.inc.php" method="POST">
+                    <div class="form-group">
+                        <label>Admin Username</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user-shield"></i>
+                            <input type="text" name="adminUsername" placeholder="Enter admin username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Admin Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="adminPassword" placeholder="Enter admin password" required>
+                        </div>
+                    </div>
+                    <button type="submit" name="adminLogin" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Admin Sign In
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

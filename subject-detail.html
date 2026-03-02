@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/subject-detail.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <span>AmatsheZulu</span>
+            </a>
+            <a href="student-dashboard.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="subject-hero">
+        <div class="hero-content">
+            <div class="hero-info">
+                <h1>Mathematics</h1>
+                <p>Grade 11 - Science Stream</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">82%</div>
+                        <div class="hero-stat-label">Current Average</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">5</div>
+                        <div class="hero-stat-label">Assignments</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">A</div>
+                        <div class="hero-stat-label">Current Grade</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="teacher-info">
+                    <img src="userProfile/profile.jpg" alt="Teacher" class="teacher-avatar">
+                    <div class="teacher-details">
+                        <h3>Mrs. Nkosi</h3>
+                        <p>Mathematics Educator</p>
+                        <p><i class="fas fa-envelope"></i> mrs.nkosi@amatshezulu.edu</p>
+                    </div>
+                </div>
+                <button class="contact-btn">
+                    <i class="fas fa-paper-plane"></i> Contact Teacher
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-grid">
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <!-- Performance Card -->
+                <div class="card">
+                    <h2 style="margin-bottom: 2rem;">Performance Overview</h2>
+                    <div class="performance-bars">
+                        <div class="performance-item">
+                            <div class="performance-label">Term 1</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" style="width: 82%;">82%</div>
+                            </div>
+                        </div>
+                        <div class="performance-item">
+                            <div class="performance-label">Term 2</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="performance-item">
+                            <div class="performance-label">Term 3</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                        <div class="performance-item">
+                            <div class="performance-label">Class Average</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" style="width: 68%; background: linear-gradient(90deg, #6b7280, #9ca3af);">68%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs Card -->
+                <div class="card">
+                    <div class="tabs">
+                        <button class="tab active" data-tab="assignments">Assignments</button>
+                        <button class="tab" data-tab="topics">Topics Covered</button>
+                        <button class="tab" data-tab="upcoming">Upcoming Tests</button>
+                    </div>
+
+                    <!-- Assignments Tab -->
+                    <div class="tab-content active" id="assignments">
+                        <div class="assignment-item">
+                            <div class="assignment-header">
+                                <div class="assignment-title">Chapter 5 - Trigonometry Problems</div>
+                                <div class="assignment-status status-pending">Pending</div>
+                            </div>
+                            <div class="assignment-meta">
+                                <span><i class="fas fa-calendar"></i> Assigned: Jan 10, 2026</span>
+                                <span><i class="fas fa-clock"></i> Due: Jan 17, 2026</span>
+                                <span><i class="fas fa-star"></i> 20 marks</span>
+                            </div>
+                            <p style="color: var(--text-light); margin-bottom: 1rem;">Complete exercises 5.1 to 5.5 from the textbook.</p>
+                            <button class="btn btn-primary">Submit Assignment</button>
+                        </div>
+
+                        <div class="assignment-item">
+                            <div class="assignment-header">
+                                <div class="assignment-title">Algebra Problem Set</div>
+                                <div class="assignment-status status-submitted">Submitted</div>
+                            </div>
+                            <div class="assignment-meta">
+                                <span><i class="fas fa-calendar"></i> Assigned: Jan 03, 2026</span>
+                                <span><i class="fas fa-clock"></i> Due: Jan 10, 2026</span>
+                                <span><i class="fas fa-star"></i> 85/100</span>
+                            </div>
+                            <p style="color: var(--text-light); margin-bottom: 1rem;">Submitted on time. Graded.</p>
+                            <button class="btn btn-secondary">View Feedback</button>
+                        </div>
+                    </div>
+
+                    <!-- Topics Tab -->
+                    <div class="tab-content" id="topics">
+                        <ul style="list-style: none;">
+                            <li style="padding: 1rem; border-bottom: 1px solid var(--bg-light);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i> Chapter 1: Algebra and Equations
+                            </li>
+                            <li style="padding: 1rem; border-bottom: 1px solid var(--bg-light);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i> Chapter 2: Functions and Graphs
+                            </li>
+                            <li style="padding: 1rem; border-bottom: 1px solid var(--bg-light);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i> Chapter 3: Trigonometry Basics
+                            </li>
+                            <li style="padding: 1rem; border-bottom: 1px solid var(--bg-light);">
+                                <i class="fas fa-spinner" style="color: var(--warning);"></i> Chapter 4: Advanced Trigonometry (In Progress)
+                            </li>
+                            <li style="padding: 1rem;">
+                                <i class="fas fa-clock" style="color: var(--text-light);"></i> Chapter 5: Calculus Introduction (Upcoming)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Upcoming Tests Tab -->
+                    <div class="tab-content" id="upcoming">
+                        <div class="assignment-item">
+                            <div class="assignment-header">
+                                <div class="assignment-title">Mid-Term Examination</div>
+                                <div class="assignment-status status-pending">Upcoming</div>
+                            </div>
+                            <div class="assignment-meta">
+                                <span><i class="fas fa-calendar"></i> Date: March 1, 2026</span>
+                                <span><i class="fas fa-clock"></i> Time: 08:00 AM</span>
+                                <span><i class="fas fa-book"></i> Chapters 1-4</span>
+                            </div>
+                            <p style="color: var(--text-light);">Comprehensive examination covering all topics from Term 1.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Quick Links Card -->
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem;">Quick Actions</h3>
+                    <ul class="quick-links">
+                        <li class="quick-link-item">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span>View Syllabus</span>
+                        </li>
+                        <li class="quick-link-item">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span>Progress Report</span>
+                        </li>
+                        <li class="quick-link-item">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <span>Class Schedule</span>
+                        </li>
+                        <li class="quick-link-item">
+                            <div class="quick-link-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <span>Ask Question</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources Card -->
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem;">Study Resources</h3>
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <div class="resource-info">
+                                <i class="fas fa-file-pdf resource-icon"></i>
+                                <div>
+                                    <div class="resource-name">Trigonometry Notes</div>
+                                    <div class="resource-size">2.4 MB</div>
+                                </div>
+                            </div>
+                            <i class="fas fa-download download-icon"></i>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-info">
+                                <i class="fas fa-file-pdf resource-icon"></i>
+                                <div>
+                                    <div class="resource-name">Practice Problems</div>
+                                    <div class="resource-size">1.8 MB</div>
+                                </div>
+                            </div>
+                            <i class="fas fa-download download-icon"></i>
+                        </li>
+                        <li class="resource-item">
+                            <div class="resource-info">
+                                <i class="fas fa-file-pdf resource-icon"></i>
+                                <div>
+                                    <div class="resource-name">Past Exam Papers</div>
+                                    <div class="resource-size">5.2 MB</div>
+                                </div>
+                            </div>
+                            <i class="fas fa-download download-icon"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/subject-detail.js"></script>
+</body>
+</html>

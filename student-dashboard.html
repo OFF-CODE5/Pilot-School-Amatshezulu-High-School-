@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/student-dashboard.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="school-logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <h2>AmatsheZulu</h2>
+            </div>
+            <div class="user-profile">
+                <img src="userProfile/default.jpg" alt="Profile" class="user-avatar">
+                <div class="user-info">
+                    <h3>Student Name</h3>
+                    <p>Grade 11 - Science</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <a class="nav-item active" data-section="overview">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+            <a class="nav-item" data-section="results">
+                <i class="fas fa-chart-line"></i>
+                <span>My Results</span>
+            </a>
+            <a class="nav-item" data-section="resources">
+                <i class="fas fa-book"></i>
+                <span>Resources</span>
+            </a>
+            <a class="nav-item" data-section="letters">
+                <i class="fas fa-file-alt"></i>
+                <span>Request Letter</span>
+            </a>
+            <a class="nav-item" data-section="profile">
+                <i class="fas fa-user"></i>
+                <span>My Profile</span>
+            </a>
+            <a class="nav-item" data-section="timetable">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Timetable</span>
+            </a>
+            <a class="nav-item" data-section="assignments">
+                <i class="fas fa-tasks"></i>
+                <span>Assignments</span>
+            </a>
+            <a class="nav-item" data-section="fees">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Fees & Payments</span>
+            </a>
+            <a class="nav-item" href="index.html">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </nav>
+
+        <button class="logout-btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+        </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button class="menu-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="page-title">
+                <h1 id="pageTitle">Dashboard Overview</h1>
+                <p id="pageSubtitle">Welcome back! Here's your academic summary</p>
+            </div>
+            <div class="notifications">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <section class="content-section active" id="overview">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Overall Average</h3>
+                        <div class="stat-number">78.5%</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Class Rank</h3>
+                        <div class="stat-number">5th</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Subjects</h3>
+                        <div class="stat-number">8</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Attendance</h3>
+                        <div class="stat-number">95%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <div class="section-header">
+                    <h2>Recent Performance</h2>
+                </div>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Term 1</th>
+                            <th>Term 2</th>
+                            <th>Term 3</th>
+                            <th>Average</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mathematics</strong></td>
+                            <td>82%</td>
+                            <td>85%</td>
+                            <td>80%</td>
+                            <td><strong>82.3%</strong></td>
+                            <td><span class="grade-badge excellent">A</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Physical Science</strong></td>
+                            <td>76%</td>
+                            <td>78%</td>
+                            <td>81%</td>
+                            <td><strong>78.3%</strong></td>
+                            <td><span class="grade-badge good">B</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Life Sciences</strong></td>
+                            <td>85%</td>
+                            <td>87%</td>
+                            <td>88%</td>
+                            <td><strong>86.7%</strong></td>
+                            <td><span class="grade-badge excellent">A</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>English</strong></td>
+                            <td>72%</td>
+                            <td>75%</td>
+                            <td>74%</td>
+                            <td><strong>73.7%</strong></td>
+                            <td><span class="grade-badge good">B</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IsiZulu</strong></td>
+                            <td>80%</td>
+                            <td>82%</td>
+                            <td>79%</td>
+                            <td><strong>80.3%</strong></td>
+                            <td><span class="grade-badge excellent">A</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="content-section" id="results">
+            <div class="results-container">
+                <div class="section-header">
+                    <h2>Academic Results</h2>
+                    <select class="filter-select">
+                        <option>2025 - Term 3</option>
+                        <option>2025 - Term 2</option>
+                        <option>2025 - Term 1</option>
+                        <option>2024 - Term 4</option>
+                    </select>
+                </div>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Assessment 1</th>
+                            <th>Assessment 2</th>
+                            <th>Exam</th>
+                            <th>Final Mark</th>
+                            <th>Grade</th>
+                            <th>Report</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mathematics</strong></td>
+                            <td>78%</td>
+                            <td>82%</td>
+                            <td>80%</td>
+                            <td><strong>80%</strong></td>
+                            <td><span class="grade-badge excellent">A (4)</span></td>
+                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Physical Science</strong></td>
+                            <td>75%</td>
+                            <td>80%</td>
+                            <td>82%</td>
+                            <td><strong>81%</strong></td>
+                            <td><span class="grade-badge excellent">A (4)</span></td>
+                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Life Sciences</strong></td>
+                            <td>85%</td>
+                            <td>87%</td>
+                            <td>90%</td>
+                            <td><strong>88%</strong></td>
+                            <td><span class="grade-badge excellent">A (5)</span></td>
+                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>English</strong></td>
+                            <td>70%</td>
+                            <td>74%</td>
+                            <td>76%</td>
+                            <td><strong>74%</strong></td>
+                            <td><span class="grade-badge good">B (3)</span></td>
+                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IsiZulu</strong></td>
+                            <td>77%</td>
+                            <td>80%</td>
+                            <td>78%</td>
+                            <td><strong>79%</strong></td>
+                            <td><span class="grade-badge good">B (3)</span></td>
+                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CAT</strong></td>
+                            <td>82%</td>
+                            <td>85%</td>
+                            <td>88%</td>
+                            <td><strong>85%</strong></td>
+                            <td><span class="grade-badge excellent">A (5)</span></td>
+                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Agricultural Science</strong></td>
+                            <td>73%</td>
+                            <td>76%</td>
+                            <td>75%</td>
+                            <td><strong>75%</strong></td>
+                            <td><span class="grade-badge good">B (3)</span></td>
+                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Life Orientation</strong></td>
+                            <td>80%</td>
+                            <td>82%</td>
+                            <td>81%</td>
+                            <td><strong>81%</strong></td>
+                            <td><span class="grade-badge excellent">A (4)</span></td>
+                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button class="btn btn-primary"><i class="fas fa-file-pdf"></i> Download Full Report Card</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="content-section" id="resources">
+            <div class="section-header">
+                <h2>Learning Resources</h2>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon blue">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Mathematics Notes</h3>
+                    <p>Comprehensive study notes for Grade 11 Mathematics covering all topics</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-download"></i> 234 downloads</span>
+                        <span><i class="fas fa-file-pdf"></i> PDF</span>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon green">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Physical Science Lab Manual</h3>
+                    <p>Practical experiments and procedures for Physical Science practicals</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-download"></i> 189 downloads</span>
+                        <span><i class="fas fa-file-pdf"></i> PDF</span>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon orange">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Life Sciences Study Guide</h3>
+                    <p>Complete study guide with diagrams and practice questions</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-download"></i> 312 downloads</span>
+                        <span><i class="fas fa-file-pdf"></i> PDF</span>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon blue">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>English Literature Notes</h3>
+                    <p>Analysis and notes for prescribed literature texts</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-download"></i> 156 downloads</span>
+                        <span><i class="fas fa-file-pdf"></i> PDF</span>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon green">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Past Exam Papers</h3>
+                    <p>Previous years' exam papers with memorandums for practice</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-download"></i> 445 downloads</span>
+                        <span><i class="fas fa-file-pdf"></i> ZIP</span>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon orange">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>CAT Tutorials</h3>
+                    <p>Step-by-step tutorials for Computer Applications Technology</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-download"></i> 201 downloads</span>
+                        <span><i class="fas fa-file-pdf"></i> PDF</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Request Letter Section -->
+        <section class="content-section" id="letters">
+            <div class="letter-form">
+                <h2 style="margin-bottom: 1rem;">Request Removal Letter</h2>
+                <p style="color: var(--text-light); margin-bottom: 2rem;">Fill in the form below to request a removal letter. Please allow 3-5 business days for processing.</p>
+                
+                <form>
+                    <div class="form-group">
+                        <label>Letter Type <span style="color: var(--error);">*</span></label>
+                        <select required>
+                            <option value="">Select letter type</option>
+                            <option value="transfer">Transfer Letter</option>
+                            <option value="conduct">Good Conduct Letter</option>
+                            <option value="completion">Certificate of Completion</option>
+                            <option value="recommendation">Recommendation Letter</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Reason for Request <span style="color: var(--error);">*</span></label>
+                        <textarea placeholder="Please explain why you need this letter..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Destination School/Institution (if applicable)</label>
+                        <input type="text" placeholder="Name of new school or institution">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Urgency Level <span style="color: var(--error);">*</span></label>
+                        <select required>
+                            <option value="">Select urgency</option>
+                            <option value="standard">Standard (5-7 days)</option>
+                            <option value="urgent">Urgent (3-5 days)</option>
+                            <option value="emergency">Emergency (1-2 days)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Parent/Guardian Contact Number <span style="color: var(--error);">*</span></label>
+                        <input type="tel" placeholder="0XX XXX XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional Notes</label>
+                        <textarea placeholder="Any additional information..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Submit Request
+                    </button>
+                </form>
+
+                <div style="margin-top: 2rem; padding: 1rem; background: var(--bg-light); border-radius: 8px;">
+                    <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-info-circle"></i> Important Information</h4>
+                    <ul style="margin-left: 1.5rem; color: var(--text-light); line-height: 1.8;">
+                        <li>All requests must be approved by your parent/guardian</li>
+                        <li>You will receive an email notification when your letter is ready</li>
+                        <li>Letters can be collected from the administration office</li>
+                        <li>Emergency requests may require additional documentation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <div class="results-container">
+                    <h3 style="margin-bottom: 1.5rem;">Request History</h3>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Letter Type</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dec 15, 2025</td>
+                                <td>Transfer Letter</td>
+                                <td><span class="grade-badge excellent">Completed</span></td>
+                                <td><button class="download-btn"><i class="fas fa-download"></i> Download</button></td>
+                            </tr>
+                            <tr>
+                                <td>Nov 20, 2025</td>
+                                <td>Good Conduct</td>
+                                <td><span class="grade-badge good">Processing</span></td>
+                                <td><button class="download-btn" disabled>Pending</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="content-section" id="profile">
+            <div class="profile-container">
+                <div class="profile-card" style="text-align: center;">
+                    <img src="userProfile/default.jpg" alt="Profile" class="profile-avatar">
+                    <h3 style="margin-bottom: 0.5rem;">Student Name</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Grade 11 - Science Stream</p>
+                    <div class="change-photo-btn">
+                        <i class="fas fa-camera"></i> Change Profile Photo
+                        <input type="file" style="display:block;" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <h2 style="margin-bottom: 1.5rem;">Personal Information</h2>
+                    <div class="info-row">
+                        <span class="info-label">Student ID</span>
+                        <span>2025001234</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Full Name</span>
+                        <span>John Doe Smith</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Date of Birth</span>
+                        <span>15 March 2008</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">ID Number</span>
+                        <span>080315****083</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Gender</span>
+                        <span>Male</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Email</span>
+                        <span>john.smith@student.amatshezulu.edu</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Phone</span>
+                        <span>+27 XX XXX XXXX</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Address</span>
+                        <span>123 Main Street, Hammarsdale, 3710</span>
+                    </div>
+
+                    <h3 style="margin: 2rem 0 1rem;">Academic Information</h3>
+                    <div class="info-row">
+                        <span class="info-label">Grade</span>
+                        <span>Grade 11</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Stream</span>
+                        <span>Science</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Enrollment Date</span>
+                        <span>January 2020</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Class Teacher</span>
+                        <span>Mrs. Nkosi</span>
+                    </div>
+
+                    <h3 style="margin: 2rem 0 1rem;">Parent/Guardian Information</h3>
+                    <div class="info-row">
+                        <span class="info-label">Guardian Name</span>
+                        <span>Jane Smith</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Relationship</span>
+                        <span>Mother</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Guardian Phone</span>
+                        <span>+27 XX XXX XXXX</span>
+                    </div>
+                    <div class="info-row" style="border-bottom: none;">
+                        <span class="info-label">Guardian Email</span>
+                        <span>jane.smith@email.com</span>
+                    </div>
+
+                    <button class="btn btn-primary" style="margin-top: 2rem; width: 100%;">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timetable Section -->
+        <section class="content-section" id="timetable">
+            <div class="results-container">
+                <h2 style="margin-bottom: 2rem;">Weekly Timetable - Grade 11 Science</h2>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>08:00 - 08:45</strong></td>
+                            <td>Mathematics<br><small>Room 101</small></td>
+                            <td>Physical Science<br><small>Lab 1</small></td>
+                            <td>English<br><small>Room 205</small></td>
+                            <td>Mathematics<br><small>Room 101</small></td>
+                            <td>Life Sciences<br><small>Lab 2</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>08:45 - 09:30</strong></td>
+                            <td>English<br><small>Room 205</small></td>
+                            <td>Mathematics<br><small>Room 101</small></td>
+                            <td>Physical Science<br><small>Lab 1</small></td>
+                            <td>CAT<br><small>Computer Lab</small></td>
+                            <td>IsiZulu<br><small>Room 302</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>09:30 - 10:15</strong></td>
+                            <td>Physical Science<br><small>Lab 1</small></td>
+                            <td>Life Sciences<br><small>Lab 2</small></td>
+                            <td>Mathematics<br><small>Room 101</small></td>
+                            <td>English<br><small>Room 205</small></td>
+                            <td>Agricultural Science<br><small>Room 110</small></td>
+                        </tr>
+                        <tr style="background: var(--bg-light);">
+                            <td colspan="6" style="text-align: center; font-weight: bold;">BREAK (10:15 - 10:45)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10:45 - 11:30</strong></td>
+                            <td>Life Sciences<br><small>Lab 2</small></td>
+                            <td>IsiZulu<br><small>Room 302</small></td>
+                            <td>CAT<br><small>Computer Lab</small></td>
+                            <td>Physical Science<br><small>Lab 1</small></td>
+                            <td>Mathematics<br><small>Room 101</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>11:30 - 12:15</strong></td>
+                            <td>CAT<br><small>Computer Lab</small></td>
+                            <td>English<br><small>Room 205</small></td>
+                            <td>Life Sciences<br><small>Lab 2</small></td>
+                            <td>IsiZulu<br><small>Room 302</small></td>
+                            <td>Physical Science<br><small>Lab 1</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>12:15 - 13:00</strong></td>
+                            <td>IsiZulu<br><small>Room 302</small></td>
+                            <td>Agricultural Science<br><small>Room 110</small></td>
+                            <td>Life Orientation<br><small>Room 201</small></td>
+                            <td>Life Sciences<br><small>Lab 2</small></td>
+                            <td>Life Orientation<br><small>Room 201</small></td>
+                        </tr>
+                        <tr style="background: var(--bg-light);">
+                            <td colspan="6" style="text-align: center; font-weight: bold;">LUNCH (13:00 - 13:45)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>13:45 - 14:30</strong></td>
+                            <td>Agricultural Science<br><small>Room 110</small></td>
+                            <td>Life Orientation<br><small>Room 201</small></td>
+                            <td>IsiZulu<br><small>Room 302</small></td>
+                            <td>Agricultural Science<br><small>Room 110</small></td>
+                            <td>English<br><small>Room 205</small></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button class="btn btn-primary"><i class="fas fa-download"></i> Download Timetable PDF</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assignments Section -->
+        <section class="content-section" id="assignments">
+            <div class="stats-grid" style="margin-bottom: 2rem;">
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Pending</h3>
+                        <div class="stat-number">5</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Completed</h3>
+                        <div class="stat-number">23</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Overdue</h3>
+                        <div class="stat-number">1</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <div class="section-header">
+                    <h2>My Assignments</h2>
+                    <select class="filter-select">
+                        <option>All Subjects</option>
+                        <option>Mathematics</option>
+                        <option>Physical Science</option>
+                        <option>Life Sciences</option>
+                        <option>English</option>
+                    </select>
+                </div>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Assignment</th>
+                            <th>Assigned Date</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Mark</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mathematics</strong></td>
+                            <td>Chapter 5 - Trigonometry Problems</td>
+                            <td>Jan 10, 2026</td>
+                            <td>Jan 17, 2026</td>
+                            <td><span class="grade-badge average">In Progress</span></td>
+                            <td>-</td>
+                            <td><button class="download-btn">Submit</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Physical Science</strong></td>
+                            <td>Lab Report - Chemical Reactions</td>
+                            <td>Jan 08, 2026</td>
+                            <td>Jan 15, 2026</td>
+                            <td><span class="grade-badge average">In Progress</span></td>
+                            <td>-</td>
+                            <td><button class="download-btn">Submit</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>English</strong></td>
+                            <td>Essay - Literary Analysis</td>
+                            <td>Jan 05, 2026</td>
+                            <td>Jan 12, 2026</td>
+                            <td><span class="grade-badge needs-improvement">Overdue</span></td>
+                            <td>-</td>
+                            <td><button class="download-btn">Submit</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Life Sciences</strong></td>
+                            <td>Research Project - Genetics</td>
+                            <td>Dec 20, 2025</td>
+                            <td>Jan 10, 2026</td>
+                            <td><span class="grade-badge excellent">Submitted</span></td>
+                            <td><strong>85%</strong></td>
+                            <td><button class="download-btn">View</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IsiZulu</strong></td>
+                            <td>Poetry Comprehension</td>
+                            <td>Dec 15, 2025</td>
+                            <td>Jan 08, 2026</td>
+                            <td><span class="grade-badge excellent">Graded</span></td>
+                            <td><strong>78%</strong></td>
+                            <td><button class="download-btn">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Fees Section -->
+        <section class="content-section" id="fees">
+            <div class="stats-grid" style="margin-bottom: 2rem;">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Annual Fees</h3>
+                        <div class="stat-number">R 0.00</div>
+                        <p style="font-size: 0.875rem; color: var(--text-light); margin-top: 0.25rem;">No-Fee School</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Payment Status</h3>
+                        <div class="stat-number" style="font-size: 1.25rem;">Exempt</div>
+                        <p style="font-size: 0.875rem; color: var(--success); margin-top: 0.25rem;">Quintile 3 School</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Optional Fees</h3>
+                        <div class="stat-number">R 150</div>
+                        <p style="font-size: 0.875rem; color: var(--text-light); margin-top: 0.25rem;">Textbooks & Materials</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <h2 style="margin-bottom: 1.5rem;">Fee Statement</h2>
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="line-height: 1.8; color: var(--text-dark);">
+                        <strong>Important Notice:</strong> AmatsheZulu High School is a No-Fee school under the Quintile 3 classification. This means that school fees are fully subsidized by the government. However, there may be optional fees for textbooks, stationery, and extra-curricular activities.
+                    </p>
+                </div>
+
+                <h3 style="margin-bottom: 1rem;">Optional Fees & Contributions</h3>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Textbook Deposit</td>
+                            <td>R 100.00</td>
+                            <td><span class="grade-badge excellent">Paid</span></td>
+                            <td>Jan 15, 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Stationery Pack</td>
+                            <td>R 50.00</td>
+                            <td><span class="grade-badge average">Pending</span></td>
+                            <td>Jan 20, 2026</td>
+                        </tr>
+                        <tr>
+                            <td>Sports Kit (Optional)</td>
+                            <td>R 200.00</td>
+                            <td><span class="grade-badge needs-improvement">Unpaid</span></td>
+                            <td>Feb 01, 2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Payment History</h3>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Receipt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jan 10, 2026</td>
+                                <td>Textbook Deposit</td>
+                                <td>R 100.00</td>
+                                <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td>Dec 05, 2025</td>
+                                <td>School Trip Contribution</td>
+                                <td>R 50.00</td>
+                                <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main> 
+
+        <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="student-dashboard.js"></script>
+</body>
+</html>

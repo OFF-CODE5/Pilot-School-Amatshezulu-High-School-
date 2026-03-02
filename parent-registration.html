@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/parent-registration.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Parent Registration - AmatsheZulu</title>
+</head>
+<body>
+    <div class="signup-container">
+        <!-- Sidebar -->
+        <div class="signup-sidebar">
+            <h2>Join AmatsheZulu Parent Portal</h2>
+            <p>Create your account to stay connected with your child's academic journey and school activities.</p>
+            <ul class="features">
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Monitor Academic Progress</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Communicate with Teachers</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Track Attendance</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Access Reports & Statements</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Stay Updated on Events</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="signup-form-container">
+            <div class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <h1>Parent Registration</h1>
+                <p>Create your parent portal account</p>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="form-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span class="step-label">Personal Info</span>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span class="step-label">Child Info</span>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span class="step-label">Security</span>
+                </div>
+            </div>
+
+            <form id="registrationForm">
+                <!-- Step 1: Personal Information -->
+                <div class="step-content active" id="step1">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Please provide your personal information as the parent/guardian.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstName" placeholder="Enter first name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastName" placeholder="Enter last name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ID Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="idNumber" placeholder="Enter ID number" maxlength="13" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="your.email@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="0XX XXX XXXX" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Residential Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-home"></i>
+                            <input type="text" id="address" placeholder="Street address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-city"></i>
+                                <input type="text" id="city" placeholder="City" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-pin"></i>
+                                <input type="text" id="postalCode" placeholder="Postal code">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary" onclick="nextStep(1)">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Child Information -->
+                <div class="step-content" id="step2">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Provide information about your child currently enrolled at AmatsheZulu.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Child's First Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-child"></i>
+                                <input type="text" id="childFirstName" placeholder="Child's first name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Child's Last Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-child"></i>
+                                <input type="text" id="childLastName" placeholder="Child's last name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Child's ID Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="childIdNumber" placeholder="Enter child's ID number" maxlength="13" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Student ID Number <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-hashtag"></i>
+                                <input type="text" id="studentId" placeholder="School student ID" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Current Grade <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-graduation-cap"></i>
+                                <select id="grade" required>
+                                    <option value="">Select grade</option>
+                                    <option value="8">Grade 8</option>
+                                    <option value="9">Grade 9</option>
+                                    <option value="10">Grade 10</option>
+                                    <option value="11">Grade 11</option>
+                                    <option value="12">Grade 12</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Relationship to Child <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-users"></i>
+                            <select id="relationship" required>
+                                <option value="">Select relationship</option>
+                                <option value="mother">Mother</option>
+                                <option value="father">Father</option>
+                                <option value="guardian">Legal Guardian</option>
+                                <option value="grandparent">Grandparent</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="additionalChild">
+                        <label for="additionalChild">I have another child at this school</label>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep(2)">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(2)">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Security -->
+                <div class="step-content" id="step3">
+                    <div class="alert alert-info">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Create a secure password to protect your account.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Create a strong password" required>
+                        </div>
+                        <small style="color: var(--text-light); font-size: 0.85rem;">
+                            Password must be at least 8 characters with uppercase, lowercase, and numbers
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            I agree to the <a href="#" style="color: var(--primary);">Terms & Conditions</a> and 
+                            <a href="#" style="color: var(--primary);">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter">
+                        <label for="newsletter">Send me updates about school events and news</label>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep(3)">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="divider">OR</div>
+
+            <div class="login-link">
+                Already have an account? <a href="login.html">Sign In Here</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/parent-registration.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/event-calender.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <span>AmatsheZulu</span>
+            </a>
+            <a href="student-dashboard.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>📅 Event Calendar</h1>
+        <p>Stay updated with school events, exams, and important dates</p>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="content-grid">
+            <!-- Calendar Section -->
+            <div>
+                <div class="calendar-card">
+                    <div class="calendar-header">
+                        <h2>January 2026</h2>
+                        <div class="calendar-nav">
+                            <button onclick="previousMonth()"><i class="fas fa-chevron-left"></i></button>
+                            <div class="calendar-month" id="currentMonth">January 2026</div>
+                            <button onclick="nextMonth()"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="calendar-grid" id="calendar">
+                        <div class="calendar-day-header">Sun</div>
+                        <div class="calendar-day-header">Mon</div>
+                        <div class="calendar-day-header">Tue</div>
+                        <div class="calendar-day-header">Wed</div>
+                        <div class="calendar-day-header">Thu</div>
+                        <div class="calendar-day-header">Fri</div>
+                        <div class="calendar-day-header">Sat</div>
+                    </div>
+                </div>
+
+                <div class="events-section">
+                    <h2 style="margin-bottom: 1rem;">Upcoming Events</h2>
+                    <div class="event-filters">
+                        <button class="filter-btn active" data-filter="all">All Events</button>
+                        <button class="filter-btn" data-filter="exam">Exams</button>
+                        <button class="filter-btn" data-filter="sports">Sports</button>
+                        <button class="filter-btn" data-filter="meeting">Meetings</button>
+                        <button class="filter-btn" data-filter="holiday">Holidays</button>
+                    </div>
+
+                    <div class="events-list">
+                        <div class="event-item exam" data-category="exam">
+                            <div class="event-date">
+                                <i class="fas fa-calendar"></i> March 1, 2026
+                            </div>
+                            <div class="event-title">Mid-Term Examinations Begin</div>
+                            <div class="event-details">
+                                <i class="fas fa-clock"></i> 08:00 AM - 12:00 PM<br>
+                                <i class="fas fa-map-marker-alt"></i> All Classrooms
+                            </div>
+                            <span class="event-category exam">Exam</span>
+                        </div>
+
+                        <div class="event-item sports" data-category="sports">
+                            <div class="event-date">
+                                <i class="fas fa-calendar"></i> February 14, 2026
+                            </div>
+                            <div class="event-title">Annual Sports Day</div>
+                            <div class="event-details">
+                                <i class="fas fa-clock"></i> 08:00 AM - 4:00 PM<br>
+                                <i class="fas fa-map-marker-alt"></i> School Sports Field
+                            </div>
+                            <span class="event-category sports">Sports</span>
+                        </div>
+
+                        <div class="event-item meeting" data-category="meeting">
+                            <div class="event-date">
+                                <i class="fas fa-calendar"></i> January 25, 2026
+                            </div>
+                            <div class="event-title">Parent-Teacher Meeting</div>
+                            <div class="event-details">
+                                <i class="fas fa-clock"></i> 2:00 PM - 5:00 PM<br>
+                                <i class="fas fa-map-marker-alt"></i> School Hall
+                            </div>
+                            <span class="event-category meeting">Meeting</span>
+                        </div>
+
+                        <div class="event-item exam" data-category="exam">
+                            <div class="event-date">
+                                <i class="fas fa-calendar"></i> January 20, 2026
+                            </div>
+                            <div class="event-title">Life Sciences Test</div>
+                            <div class="event-details">
+                                <i class="fas fa-clock"></i> 10:00 AM - 12:00 PM<br>
+                                <i class="fas fa-map-marker-alt"></i> Science Lab
+                            </div>
+                            <span class="event-category exam">Exam</span>
+                        </div>
+
+                        <div class="event-item holiday" data-category="holiday">
+                            <div class="event-date">
+                                <i class="fas fa-calendar"></i> March 21, 2026
+                            </div>
+                            <div class="event-title">Human Rights Day</div>
+                            <div class="event-details">
+                                <i class="fas fa-info-circle"></i> Public Holiday - School Closed
+                            </div>
+                            <span class="event-category holiday">Holiday</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="upcoming-card">
+                    <h3>⏰ Countdown</h3>
+                    <div class="countdown-item">
+                        <div class="countdown-title">Life Sciences Test</div>
+                        <div class="countdown-timer">
+                            <div>
+                                <div class="countdown-number" id="countdown1">5</div>
+                                <div class="countdown-label">days</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-title">Sports Day</div>
+                        <div class="countdown-timer">
+                            <div>
+                                <div class="countdown-number" id="countdown2">30</div>
+                                <div class="countdown-label">days</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-title">Mid-Term Exams</div>
+                        <div class="countdown-timer">
+                            <div>
+                                <div class="countdown-number" id="countdown3">45</div>
+                                <div class="countdown-label">days</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upcoming-card">
+                    <h3>📌 Quick Add to Calendar</h3>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                        Click on any event to add it to your personal calendar (Google Calendar, iCal, etc.)
+                    </p>
+                    <button style="width: 100%; padding: 0.875rem; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        <i class="fas fa-download"></i> Download Calendar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/event-calender.js"></script>
+</body>
+</html>

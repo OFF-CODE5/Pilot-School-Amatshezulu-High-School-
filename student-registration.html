@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/student-registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Student Registration - AmatsheZulu High School</title>
+</head>
+<body>
+    <div class="signup-container">
+        <!-- Sidebar -->
+        <div class="signup-sidebar">
+            <h2>Welcome to AmatsheZulu High School</h2>
+            <p>Join our community of excellence and start your journey towards academic success.</p>
+            <ul class="features">
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Quality Education</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Experienced Teachers</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Modern Facilities</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Digital Learning Resources</span>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Sports & Extracurricular Activities</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="signup-form-container">
+            <div class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <h1>Student Application</h1>
+                <p>Apply for admission to AmatsheZulu High School</p>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="form-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span class="step-label">Personal Info</span>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span class="step-label">Parent/Guardian</span>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span class="step-label">Academic Info</span>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <span class="step-label">Account Setup</span>
+                </div>
+            </div>
+
+            <form id="registrationForm">
+                <!-- Step 1: Personal Information -->
+                <div class="step-content active" id="step1">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Please provide the student's personal information.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstName" placeholder="Enter first name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastName" placeholder="Enter last name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ID Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="idNumber" placeholder="Enter ID number" maxlength="13" required>
+                        </div>
+                        <small style="color: var(--text-light); font-size: 0.85rem;">
+                            13-digit South African ID number
+                        </small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date of Birth <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="dateOfBirth" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-venus-mars"></i>
+                                <select id="gender" required>
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Home Language <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-language"></i>
+                            <select id="homeLanguage" required>
+                                <option value="">Select language</option>
+                                <option value="zulu">IsiZulu</option>
+                                <option value="xhosa">IsiXhosa</option>
+                                <option value="english">English</option>
+                                <option value="afrikaans">Afrikaans</option>
+                                <option value="sotho">Sesotho</option>
+                                <option value="tswana">Setswana</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Residential Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-home"></i>
+                            <input type="text" id="address" placeholder="Street address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City/Town <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-city"></i>
+                                <input type="text" id="city" placeholder="City or town" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-pin"></i>
+                                <input type="text" id="postalCode" placeholder="Postal code">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary" onclick="nextStep(1)">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Parent/Guardian Information -->
+                <div class="step-content" id="step2">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Provide parent or guardian contact information.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Parent/Guardian First Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="parentFirstName" placeholder="First name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Parent/Guardian Last Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="parentLastName" placeholder="Last name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Relationship <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-users"></i>
+                            <select id="relationship" required>
+                                <option value="">Select relationship</option>
+                                <option value="mother">Mother</option>
+                                <option value="father">Father</option>
+                                <option value="guardian">Legal Guardian</option>
+                                <option value="grandparent">Grandparent</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Parent/Guardian ID Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="parentIdNumber" placeholder="13-digit ID number" maxlength="13" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contact Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="parentPhone" placeholder="0XX XXX XXXX" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="parentEmail" placeholder="email@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alternative Contact Number</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="alternativePhone" placeholder="Alternative contact">
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep(2)">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(2)">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Academic Information -->
+                <div class="step-content" id="step3">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Provide academic and enrollment information.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Grade Applying For <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-graduation-cap"></i>
+                                <select id="gradeApplying" required>
+                                    <option value="">Select grade</option>
+                                    <option value="8">Grade 8</option>
+                                    <option value="9">Grade 9</option>
+                                    <option value="10">Grade 10</option>
+                                    <option value="11">Grade 11</option>
+                                    <option value="12">Grade 12</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Academic Year <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar-alt"></i>
+                                <select id="academicYear" required>
+                                    <option value="">Select year</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Previous School Name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-school"></i>
+                            <input type="text" id="previousSchool" placeholder="Name of previous school">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Grade Completed</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                            <select id="lastGrade">
+                                <option value="">Select grade</option>
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                                <option value="11">Grade 11</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Stream/Focus Area (For Grade 10-12) <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-book"></i>
+                            <select id="stream" required>
+                                <option value="">Select stream</option>
+                                <option value="science">Science (Maths & Physical Sciences)</option>
+                                <option value="commerce">Commerce (Accounting & Business)</option>
+                                <option value="humanities">Humanities (History & Geography)</option>
+                                <option value="technical">Technical (CAT & IT)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="specialNeeds">
+                        <label for="specialNeeds">Student has special educational needs</label>
+                    </div>
+
+                    <div class="form-group" id="specialNeedsDetails" style="display: none;">
+                        <label>Please specify special needs</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-info-circle"></i>
+                            <textarea id="specialNeedsText" rows="3" placeholder="Describe any special educational needs"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep(3)">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(3)">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Account Setup -->
+                <div class="step-content" id="step4">
+                    <div class="alert alert-info">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Create your student portal login credentials.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Student Email <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="studentEmail" placeholder="student.email@example.com" required>
+                        </div>
+                        <small style="color: var(--text-light); font-size: 0.85rem;">
+                            This email will be used for student portal login
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Create a strong password" required>
+                        </div>
+                        <small style="color: var(--text-light); font-size: 0.85rem;">
+                            Minimum 8 characters with uppercase, lowercase, and numbers
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Profile Photo (Optional)</label>
+                        <div class="upload-box">
+                            <input type="file" id="profilePhoto" accept="image/*" style="display: none;">
+                            <div class="upload-placeholder" onclick="document.getElementById('profilePhoto').click()">
+                                <i class="fas fa-camera"></i>
+                                <p>Click to upload photo</p>
+                                <small>JPG, PNG (Max 2MB)</small>
+                            </div>
+                            <img id="photoPreview" style="display: none; max-width: 150px; border-radius: 8px; margin-top: 1rem;">
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            I agree to the <a href="#" style="color: var(--primary);">Terms & Conditions</a> and 
+                            <a href="#" style="color: var(--primary);">School Policies</a>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">
+                            Parent/Guardian consent for student registration
+                        </label>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep(4)">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-check-circle"></i> Submit Application
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="divider">OR</div>
+
+            <div class="login-link">
+                Already have an account? <a href="login.html">Sign In Here</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/student-registration.js"></script>
+</body>
+</html>

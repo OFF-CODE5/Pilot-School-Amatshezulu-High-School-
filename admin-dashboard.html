@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AmatsheZulu High School</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="school-logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <h2>AmatsheZulu</h2>
+            </div>
+            <div class="admin-profile">
+                <img src="userProfile/profile.jpg" alt="Admin" class="admin-avatar">
+                <div class="admin-info">
+                    <h3>Administrator</h3>
+                    <p>System Admin</p>
+                </div>
+                <div class="profile-upload-overlay">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <input type="file" id="profileImageInput" accept="image/*">
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-section">
+                <div class="nav-section-title">Main</div>
+                <a class="nav-item active" data-section="overview">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-item" data-section="students">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+                <a class="nav-item" data-section="educators">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Educators</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Academic</div>
+                <a class="nav-item" data-section="results">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Upload Results</span>
+                </a>
+                <a class="nav-item" data-section="applications">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                    <span class="nav-badge">5</span>
+                </a>
+                <a class="nav-item" data-section="letters">
+                    <i class="fas fa-envelope"></i>
+                    <span>Letter Requests</span>
+                    <span class="nav-badge">3</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Content</div>
+                <a class="nav-item" data-section="updates">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Post Updates</span>
+                </a>
+                <a class="nav-item" data-section="resources">
+                    <i class="fas fa-book"></i>
+                    <span>Manage Resources</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">System</div>
+                <a class="nav-item" data-section="reports">
+                    <i class="fas fa-file-chart-line"></i>
+                    <span>Reports</span>
+                </a>
+                <a class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </nav>
+
+        <button class="logout-btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button class="menu-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="page-title">
+                <h1 id="pageTitle">Admin Dashboard</h1>
+                <p id="pageSubtitle">Welcome back! Here's what's happening</p>
+            </div>
+            <div class="top-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search students, educators...">
+                </div>
+                <button class="icon-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">8</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <section class="content-section active" id="overview">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Students</h3>
+                        <div class="stat-number">847</div>
+                        <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 12 this month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Educators</h3>
+                        <div class="stat-number">32</div>
+                        <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 2 new</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Pending Applications</h3>
+                        <div class="stat-number">15</div>
+                        <div class="stat-trend down"><i class="fas fa-arrow-down"></i> 3 processed</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Attendance Today</h3>
+                        <div class="stat-number">96%</div>
+                        <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 2% from yesterday</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <div class="quick-action-card" onclick="switchSection('results')">
+                    <i class="fas fa-upload"></i>
+                    <h4>Upload Results</h4>
+                </div>
+                <div class="quick-action-card" onclick="switchSection('updates')">
+                    <i class="fas fa-bullhorn"></i>
+                    <h4>Post Update</h4>
+                </div>
+                <div class="quick-action-card" onclick="switchSection('students')">
+                    <i class="fas fa-user-plus"></i>
+                    <h4>Add Student</h4>
+                </div>
+                <div class="quick-action-card" onclick="switchSection('applications')">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h4>Review Applications</h4>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Recent Activities</h2>
+                    <button class="btn btn-secondary btn-sm">View All</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>New student application received</td>
+                            <td>John Doe</td>
+                            <td>Jan 12, 2026 10:30 AM</td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>Results uploaded for Grade 11</td>
+                            <td>Admin User</td>
+                            <td>Jan 12, 2026 09:15 AM</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>Letter request - Transfer Letter</td>
+                            <td>Jane Smith</td>
+                            <td>Jan 11, 2026 04:20 PM</td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Students Section -->
+        <section class="content-section" id="students">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Student Management</h2>
+                    <button class="btn btn-primary" onclick="alert('Add new student form')">
+                        <i class="fas fa-plus"></i> Add Student
+                    </button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Grade</th>
+                            <th>Stream</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025001</td>
+                            <td>John Doe Smith</td>
+                            <td>Grade 11</td>
+                            <td>Science</td>
+                            <td><span class="status-badge success">Active</span></td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm">View</button>
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025002</td>
+                            <td>Jane Williams</td>
+                            <td>Grade 10</td>
+                            <td>Commerce</td>
+                            <td><span class="status-badge success">Active</span></td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm">View</button>
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025003</td>
+                            <td>Michael Brown</td>
+                            <td>Grade 12</td>
+                            <td>Humanities</td>
+                            <td><span class="status-badge success">Active</span></td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm">View</button>
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Upload Results Section -->
+        <section class="content-section" id="results">
+            <div class="card">
+                <h2 style="margin-bottom: 2rem;">Upload Student Results</h2>
+                <form action="includes/reports.inc.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Select Student</label>
+                            <select name="studentID" required>
+                                <option value="">Choose student...</option>
+                                <option value="1">2025001 - John Doe Smith</option>
+                                <option value="2">2025002 - Jane Williams</option>
+                                <option value="3">2025003 - Michael Brown</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Academic Term</label>
+                            <select required>
+                                <option value="">Select term...</option>
+                                <option value="term1">Term 1</option>
+                                <option value="term2">Term 2</option>
+                                <option value="term3">Term 3</option>
+                                <option value="term4">Term 4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Report Card (PDF)</label>
+                        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Click to upload or drag and drop</h3>
+                            <p>PDF files only (Max 5MB)</p>
+                            <input type="file" id="fileInput" name="file" accept=".pdf" style="display: none;" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" name="uploadreports" class="btn btn-primary">
+                        <i class="fas fa-upload"></i> Upload Results
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section class="content-section" id="applications">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Student Applications</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Application ID</th>
+                            <th>Student Name</th>
+                            <th>Grade Applying</th>
+                            <th>Date Submitted</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>APP2026001</td>
+                            <td>Sarah Johnson</td>
+                            <td>Grade 8</td>
+                            <td>Jan 10, 2026</td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                            <td>
+                                <button class="btn btn-success btn-sm">Approve</button>
+                                <button class="btn btn-danger btn-sm">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>APP2026002</td>
+                            <td>David Lee</td>
+                            <td>Grade 10</td>
+                            <td>Jan 09, 2026</td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                            <td>
+                                <button class="btn btn-success btn-sm">Approve</button>
+                                <button class="btn btn-danger btn-sm">Reject</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Letter Requests Section -->
+        <section class="content-section" id="letters">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Letter Requests</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Student</th>
+                            <th>Letter Type</th>
+                            <th>Date Requested</th>
+                            <th>Urgency</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LTR001</td>
+                            <td>John Smith</td>
+                            <td>Transfer Letter</td>
+                            <td>Jan 11, 2026</td>
+                            <td><span class="status-badge danger">Emergency</span></td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                            <td>
+                                <button class="btn btn-success btn-sm">Approve</button>
+                                <button class="btn btn-primary btn-sm">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Post Updates Section -->
+        <section class="content-section" id="updates">
+            <div class="card">
+                <h2 style="margin-bottom: 2rem;">Post School Update</h2>
+                <form action="includes/update.inc.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Update Title</label>
+                        <input type="text" name="header" placeholder="Enter update title..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select required>
+                            <option value="">Select category...</option>
+                            <option value="announcement">Announcement</option>
+                            <option value="event">Event</option>
+                            <option value="academic">Academic</option>
+                            <option value="sports">Sports</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Update Content</label>
+                        <textarea name="message" rows="8" placeholder="Write your update..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Image (Optional)</label>
+                        <input type="file" name="file" accept="image/*">
+                    </div>
+
+                    <button type="submit" name="schoolmedia" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Publish Update
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Educators Section -->
+        <section class="content-section" id="educators">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Educator Management</h2>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Educator
+                    </button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Subject</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EDU001</td>
+                            <td>Mrs. Nkosi</td>
+                            <td>Mathematics</td>
+                            <td>Science</td>
+                            <td><span class="status-badge success">Active</span></td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm">View</button>
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="content-section" id="resources">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Manage Resources</h2>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Resource
+                    </button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Resource Name</th>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Downloads</th>
+                            <th>Date Added</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mathematics Study Notes</td>
+                            <td>Mathematics</td>
+                            <td>Grade 11</td>
+                            <td>234</td>
+                            <td>Jan 05, 2026</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section class="content-section" id="reports">
+            <div class="card">
+                <h2 style="margin-bottom: 2rem;">Generate Reports</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Report Type</label>
+                        <select>
+                            <option>Student Performance Report</option>
+                            <option>Attendance Report</option>
+                            <option>Financial Report</option>
+                            <option>Enrollment Report</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Time Period</label>
+                        <select>
+                            <option>This Month</option>
+                            <option>This Term</option>
+                            <option>This Year</option>
+                            <option>Custom Range</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-primary">
+                    <i class="fas fa-file-download"></i> Generate Report
+                </button>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="content-section" id="settings">
+            <div class="card">
+                <h2 style="margin-bottom: 2rem;">System Settings</h2>
+                <div class="form-group">
+                    <label>School Name</label>
+                    <input type="text" value="AmatsheZulu High School">
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Academic Year</label>
+                        <select>
+                            <option>2026</option>
+                            <option>2025</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Term</label>
+                        <select>
+                            <option>Term 1</option>
+                            <option>Term 2</option>
+                            <option>Term 3</option>
+                            <option>Term 4</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Save Changes</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

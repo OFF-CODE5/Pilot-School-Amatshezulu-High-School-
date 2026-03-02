@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/update.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <span>AmatsheZulu</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="educators.html">Educators</a></li>
+                <li><a href="updates.html">Updates</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>School Updates & News</h1>
+        <p>Stay informed about the latest happenings at AmatsheZulu High School</p>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <input type="text" id="searchInput" placeholder="Search updates...">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="announcement">Announcements</button>
+                <button class="filter-btn" data-filter="event">Events</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+            </div>
+        </div>
+
+        <!-- Updates Grid -->
+        <div class="updates-grid" id="updatesGrid">
+            <!-- Update Card 1 -->
+            <article class="update-card" data-category="announcement">
+                <img src="media/school-event.jpg" alt="School Event" class="update-image">
+                <div class="update-content">
+                    <div class="update-meta">
+                        <span><i class="fas fa-calendar"></i> January 10, 2026</span>
+                        <span><i class="fas fa-tag"></i> <span class="update-badge">Announcement</span></span>
+                    </div>
+                    <h2>Welcome Back: New Academic Year 2026</h2>
+                    <p>We are excited to welcome all students back for the 2026 academic year. Classes will commence on January 15th. Please ensure all registration and fee payments are completed before the start date. We look forward to another year of academic excellence and growth.</p>
+                    <div class="update-footer">
+                        <div class="update-author">
+                            <img src="userProfile/profile1.jpg" alt="Author" class="author-avatar">
+                            <div>
+                                <strong>School Administration</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">Principal's Office</p>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Update Card 2 -->
+            <article class="update-card" data-category="event">
+                <img src="media/sports-day.jpg" alt="Sports Day" class="update-image">
+                <div class="update-content">
+                    <div class="update-meta">
+                        <span><i class="fas fa-calendar"></i> January 8, 2026</span>
+                        <span><i class="fas fa-tag"></i> <span class="update-badge">Event</span></span>
+                    </div>
+                    <h2>Annual Sports Day - February 14th</h2>
+                    <p>Save the date! Our annual sports day will be held on February 14th at the school grounds. All students are encouraged to participate in various sporting events. Parents and guardians are welcome to attend and support our athletes.</p>
+                    <div class="update-footer">
+                        <div class="update-author">
+                            <img src="userProfile/profile.jpg" alt="Author" class="author-avatar">
+                            <div>
+                                <strong>Sports Department</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">Physical Education</p>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Update Card 3 -->
+            <article class="update-card" data-category="academic">
+                <img src="media/exam-notice.jpg" alt="Exam Notice" class="update-image">
+                <div class="update-content">
+                    <div class="update-meta">
+                        <span><i class="fas fa-calendar"></i> January 5, 2026</span>
+                        <span><i class="fas fa-tag"></i> <span class="update-badge">Academic</span></span>
+                    </div>
+                    <h2>Mid-Year Examination Schedule Released</h2>
+                    <p>The mid-year examination schedule for all grades has been published. Students can collect their timetables from their respective class teachers. Examinations will begin on March 1st. Please prepare accordingly and ensure you have all necessary materials.</p>
+                    <div class="update-footer">
+                        <div class="update-author">
+                            <img src="userProfile/profile1.jpg" alt="Author" class="author-avatar">
+                            <div>
+                                <strong>Academic Department</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">Examinations Office</p>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Update Card 4 -->
+            <article class="update-card" data-category="announcement">
+                <img src="media/safety-notice.jpg" alt="Safety Notice" class="update-image">
+                <div class="update-content">
+                    <div class="update-meta">
+                        <span><i class="fas fa-calendar"></i> December 20, 2025</span>
+                        <span><i class="fas fa-tag"></i> <span class="update-badge">Announcement</span></span>
+                    </div>
+                    <h2>School Safety and Security Updates</h2>
+                    <p>We have implemented enhanced security measures to ensure the safety of all students and staff. New access control systems have been installed at all entry points. All visitors must report to the main office and sign in before proceeding to other areas of the school.</p>
+                    <div class="update-footer">
+                        <div class="update-author">
+                            <img src="userProfile/profile.jpg" alt="Author" class="author-avatar">
+                            <div>
+                                <strong>Security Department</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">School Safety</p>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Update Card 5 -->
+            <article class="update-card" data-category="sports">
+                <img src="media/soccer-tournament.jpg" alt="Soccer Tournament" class="update-image">
+                <div class="update-content">
+                    <div class="update-meta">
+                        <span><i class="fas fa-calendar"></i> December 15, 2025</span>
+                        <span><i class="fas fa-tag"></i> <span class="update-badge">Sports</span></span>
+                    </div>
+                    <h2>Soccer Team Wins Regional Championship</h2>
+                    <p>Congratulations to our school soccer team for winning the regional championship! The team displayed exceptional skill, teamwork, and sportsmanship throughout the tournament. We are incredibly proud of their achievement and dedication to excellence both on and off the field.</p>
+                    <div class="update-footer">
+                        <div class="update-author">
+                            <img src="userProfile/profile1.jpg" alt="Author" class="author-avatar">
+                            <div>
+                                <strong>Coach Mthembu</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">Soccer Coach</p>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Update Card 6 -->
+            <article class="update-card" data-category="academic">
+                <img src="media/science-fair.jpg" alt="Science Fair" class="update-image">
+                <div class="update-content">
+                    <div class="update-meta">
+                        <span><i class="fas fa-calendar"></i> December 10, 2025</span>
+                        <span><i class="fas fa-tag"></i> <span class="update-badge">Academic</span></span>
+                    </div>
+                    <h2>Annual Science Fair - Call for Projects</h2>
+                    <p>The annual science fair is scheduled for April 20th. All science stream students are encouraged to participate and showcase their innovative projects. Registration deadline is March 15th. This is an excellent opportunity to demonstrate your scientific knowledge and creativity.</p>
+                    <div class="update-footer">
+                        <div class="update-author">
+                            <img src="userProfile/profile.jpg" alt="Author" class="author-avatar">
+                            <div>
+                                <strong>Science Department</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">HOD Science</p>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-search"></i>
+            <h3>No updates found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024-2025 AmatsheZulu High School. All Rights Reserved.</p>
+    </footer>
+
+        <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/update.js"></script>
+</body>
+</html>

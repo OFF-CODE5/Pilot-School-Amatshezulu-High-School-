@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/appointment.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Amatshezulu High School</title>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="web_img/school_logo/school-logo.jpg" alt="School Logo">
+                <span>AmatsheZulu</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Book an Appointment</h1>
+        <p>Schedule a meeting with our staff or administration</p>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Info Cards -->
+        <div class="info-section">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday<br>08:00 AM - 04:00 PM</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Contact</h3>
+                    <p>031-772-2352<br>amatshezuluhigh@gmail.com</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Response Time</h3>
+                    <p>We'll confirm within<br>24 hours</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-container">
+            <!-- Date & Time Selection -->
+            <div class="form-section">
+                <h2 class="section-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    Select Date & Time
+                </h2>
+
+                <!-- Calendar -->
+                <div class="calendar-wrapper">
+                    <div class="calendar-header">
+                        <h4 id="currentMonth">January 2026</h4>
+                        <div class="calendar-nav">
+                            <button onclick="previousMonth()"><i class="fas fa-chevron-left"></i></button>
+                            <button onclick="nextMonth()"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="calendar-grid" id="calendar">
+                        <div class="day-label">Sun</div>
+                        <div class="day-label">Mon</div>
+                        <div class="day-label">Tue</div>
+                        <div class="day-label">Wed</div>
+                        <div class="day-label">Thu</div>
+                        <div class="day-label">Fri</div>
+                        <div class="day-label">Sat</div>
+                    </div>
+                </div>
+
+                <!-- Time Slots -->
+                <h4 style="margin-bottom: 1rem;">Available Time Slots</h4>
+                <div class="time-slots" id="timeSlots">
+                    <div class="time-slot" onclick="selectTime(this)">08:00 AM</div>
+                    <div class="time-slot" onclick="selectTime(this)">09:00 AM</div>
+                    <div class="time-slot" onclick="selectTime(this)">10:00 AM</div>
+                    <div class="time-slot" onclick="selectTime(this)">11:00 AM</div>
+                    <div class="time-slot" onclick="selectTime(this)">12:00 PM</div>
+                    <div class="time-slot" onclick="selectTime(this)">01:00 PM</div>
+                    <div class="time-slot" onclick="selectTime(this)">02:00 PM</div>
+                    <div class="time-slot" onclick="selectTime(this)">03:00 PM</div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i>
+                    Your Information
+                </h2>
+
+                <form action="https://formspree.io/f/movjgzpr" method="POST" id="appointmentForm">
+                    <div class="form-group">
+                        <label>Full Name <span class="required">*</span></label>
+                        <input type="text" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <input type="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number <span class="required">*</span></label>
+                        <input type="tel" name="phone" placeholder="0XX XXX XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Department/Person <span class="required">*</span></label>
+                        <select name="department" required>
+                            <option value="">Select Department</option>
+                            <option value="principal"><i class="fas fa-user-tie"></i> Principal</option>
+                            <option value="admin"><i class="fas fa-user-cog"></i> Administration</option>
+                            <option value="academic"><i class="fas fa-graduation-cap"></i> Academic Department</option>
+                            <option value="counselor"><i class="fas fa-user-md"></i> School Counselor</option>
+                            <option value="sports"><i class="fas fa-running"></i> Sports Department</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Purpose of Visit <span class="required">*</span></label>
+                        <select name="purpose" required>
+                            <option value="">Select Purpose</option>
+                            <option value="admission"><i class="fas fa-user-plus"></i> Admission Inquiry</option>
+                            <option value="academic"><i class="fas fa-book"></i> Academic Consultation</option>
+                            <option value="disciplinary"><i class="fas fa-gavel"></i> Disciplinary Matter</option>
+                            <option value="fee"><i class="fas fa-money-bill"></i> Fee Related</option>
+                            <option value="other"><i class="fas fa-question-circle"></i> Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional Notes</label>
+                        <textarea name="notes" placeholder="Any additional information..."></textarea>
+                    </div>
+
+                    <input type="hidden" name="date" id="selectedDate">
+                    <input type="hidden" name="time" id="selectedTime">
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Appointment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2 style="margin-bottom: 1rem;">Appointment Booked!</h2>
+            <p style="color: var(--text-light); margin-bottom: 2rem;">
+                Your appointment has been successfully scheduled. You will receive a confirmation email shortly.
+            </p>
+            <button onclick="closeModal()" class="btn btn-primary" style="max-width: 200px; margin: 0 auto;">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024-2025 AmatsheZulu High School. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/appointment.js"></script>
+</body>
+</html>
