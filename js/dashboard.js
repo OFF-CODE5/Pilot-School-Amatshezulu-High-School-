@@ -4,46 +4,48 @@
 
 // Page Titles Configuration
 const pageTitles = {
-    overview: { title: 'Dashboard Overview', subtitle: "Welcome back! Here's your academic summary" },
-    results: { title: 'My Results', subtitle: 'View your academic performance and reports' },
-    resources: { title: 'Learning Resources', subtitle: 'Access study materials and past papers' },
-    letters: { title: 'Request Letters', subtitle: 'Request official documents and letters' },
-    profile: { title: 'My Profile', subtitle: 'Manage your personal information' },
-    timetable: { title: 'My Timetable', subtitle: 'View your class schedule' },
-    assignments: { title: 'Assignments', subtitle: 'Track your homework and tasks' },
-    fees: { title: 'Fees & Payments', subtitle: 'View your fee statements' },
-    calculator: { title: 'Grade Calculator', subtitle: 'Predict your final grades' },
-    planner: { title: 'Study Planner', subtitle: 'Plan your study schedule' }
+    overview:    { title: 'Dashboard Overview',  subtitle: "Welcome back! Here's your academic summary" },
+    results:     { title: 'My Results',           subtitle: 'View your academic performance and reports' },
+    resources:   { title: 'Learning Resources',   subtitle: 'Access study materials and past papers' },
+    letters:     { title: 'Request Letters',       subtitle: 'Request official documents and letters' },
+    profile:     { title: 'My Profile',            subtitle: 'Manage your personal information' },
+    timetable:   { title: 'My Timetable',          subtitle: 'View your class schedule' },
+    assignments: { title: 'Assignments',           subtitle: 'Track your homework and tasks' },
+    fees:        { title: 'Fees & Payments',        subtitle: 'View your fee statements' },
+    calculator:  { title: 'Grade Calculator',       subtitle: 'Predict your final grades' },
+    planner:     { title: 'Study Planner',          subtitle: 'Plan your study schedule' }
 };
 
 // Navigation System
 function initDashboardNavigation() {
-    const navItems = document.querySelectorAll('.nav-item');
+    const navItems       = document.querySelectorAll('.nav-item');
     const contentSections = document.querySelectorAll('.content-section');
-    const pageTitle = document.getElementById('pageTitle');
-    const pageSubtitle = document.getElementById('pageSubtitle');
+    const pageTitle      = document.getElementById('pageTitle');
+    const pageSubtitle   = document.getElementById('pageSubtitle');
 
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            if (item.getAttribute('href')) return;
+            if (item.getAttribute('href')) return; // allow real links
             e.preventDefault();
-            
+
             const section = item.dataset.section;
-            
+
             navItems.forEach(nav => nav.classList.remove('active'));
             item.classList.add('active');
-            
+
             contentSections.forEach(content => content.classList.remove('active'));
             const targetSection = document.getElementById(section);
             if (targetSection) targetSection.classList.add('active');
-            
+
             if (pageTitles[section]) {
-                pageTitle.textContent = pageTitles[section].title;
-                pageSubtitle.textContent = pageTitles[section].subtitle;
+                if (pageTitle)    pageTitle.textContent    = pageTitles[section].title;
+                if (pageSubtitle) pageSubtitle.textContent = pageTitles[section].subtitle;
             }
 
+            // Auto-close sidebar on mobile
             if (window.innerWidth <= 1024) {
-                document.getElementById('sidebar').classList.remove('active');
+                const sidebar = document.getElementById('sidebar');
+                if (sidebar) sidebar.classList.remove('active');
             }
         });
     });
@@ -52,28 +54,27 @@ function initDashboardNavigation() {
 // Sidebar Toggle
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
-    if (sidebar) {
-        sidebar.classList.toggle('active');
-    }
+    if (sidebar) sidebar.classList.toggle('active');
 }
 
 // Dark Mode Toggle
 function initDarkMode() {
     const darkModeToggle = document.getElementById('darkModeToggle');
     if (!darkModeToggle) return;
-    
+
     const darkModeIcon = darkModeToggle.querySelector('i');
-    
-    // Check for saved preference
+    if (!darkModeIcon) return;
+
+    // Restore saved preference
     if (localStorage.getItem('darkMode') === 'enabled') {
         document.body.classList.add('dark-mode');
         darkModeIcon.classList.replace('fa-moon', 'fa-sun');
     }
 
     darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
-        if (document.body.classList.contains('dark-mode')) {
+        const isDark = document.body.classList.toggle('dark-mode');
+
+        if (isDark) {
             darkModeIcon.classList.replace('fa-moon', 'fa-sun');
             localStorage.setItem('darkMode', 'enabled');
             showNotification('Dark mode enabled', 'success');
@@ -87,11 +88,11 @@ function initDarkMode() {
 
 // Notification System
 function initNotifications() {
-    const notificationBtn = document.getElementById('notificationBtn');
+    const notificationBtn      = document.getElementById('notificationBtn');
     const notificationDropdown = document.getElementById('notificationDropdown');
-    
+
     if (!notificationBtn || !notificationDropdown) return;
-    
+
     notificationBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         notificationDropdown.classList.toggle('show');
@@ -121,60 +122,55 @@ function updateNotificationCount() {
     const badge = document.getElementById('notificationCount');
     if (badge) {
         badge.textContent = unreadCount;
-        if (unreadCount === 0) {
-            badge.style.display = 'none';
-        }
+        badge.style.display = unreadCount === 0 ? 'none' : '';
     }
 }
 
 // Grade Calculator
 function calculateGrade() {
-    const term1 = parseFloat(document.getElementById('term1')?.value) || 0;
-    const weight1 = parseFloat(document.getElementById('weight1')?.value) || 0;
-    const term2 = parseFloat(document.getElementById('term2')?.value) || 0;
-    const weight2 = parseFloat(document.getElementById('weight2')?.value) || 0;
-    const term3 = parseFloat(document.getElementById('term3')?.value) || 0;
-    const weight3 = parseFloat(document.getElementById('weight3')?.value) || 0;
-    const exam = parseFloat(document.getElementById('exam')?.value) || 0;
-    const examWeight = parseFloat(document.getElementById('examWeight')?.value) || 0;
+    const val = id => parseFloat(document.getElementById(id)?.value) || 0;
 
-    const finalGrade = (term1 * weight1/100) + (term2 * weight2/100) + 
-                       (term3 * weight3/100) + (exam * examWeight/100);
-    
+    const term1 = val('term1'), weight1 = val('weight1');
+    const term2 = val('term2'), weight2 = val('weight2');
+    const term3 = val('term3'), weight3 = val('weight3');
+    const exam  = val('exam'),  examWeight = val('examWeight');
+
+    const finalGrade = (term1 * weight1 / 100) + (term2 * weight2 / 100) +
+                       (term3 * weight3 / 100) + (exam  * examWeight / 100);
+
     const finalGradeEl = document.getElementById('finalGrade');
     if (finalGradeEl) finalGradeEl.textContent = finalGrade.toFixed(1) + '%';
-    
+
     let letter = 'F';
-    if (finalGrade >= 80) letter = 'A';
+    if      (finalGrade >= 80) letter = 'A';
     else if (finalGrade >= 70) letter = 'B';
     else if (finalGrade >= 60) letter = 'C';
     else if (finalGrade >= 50) letter = 'D';
-    
+
     const letterGradeEl = document.getElementById('letterGrade');
     if (letterGradeEl) letterGradeEl.textContent = letter;
 
-    // Calculate scenarios
-    const baseGrade = (term1 * weight1/100) + (term2 * weight2/100) + (term3 * weight3/100);
-    const scenario1El = document.getElementById('scenario1');
-    const scenario2El = document.getElementById('scenario2');
-    const scenario3El = document.getElementById('scenario3');
-    
-    if (scenario1El) scenario1El.textContent = (baseGrade + (60 * examWeight/100)).toFixed(1) + '%';
-    if (scenario2El) scenario2El.textContent = (baseGrade + (80 * examWeight/100)).toFixed(1) + '%';
-    if (scenario3El) scenario3El.textContent = (baseGrade + (100 * examWeight/100)).toFixed(1) + '%';
+    // Scenarios
+    const baseGrade = (term1 * weight1 / 100) + (term2 * weight2 / 100) + (term3 * weight3 / 100);
+    const s1 = document.getElementById('scenario1');
+    const s2 = document.getElementById('scenario2');
+    const s3 = document.getElementById('scenario3');
+    if (s1) s1.textContent = (baseGrade + (60  * examWeight / 100)).toFixed(1) + '%';
+    if (s2) s2.textContent = (baseGrade + (80  * examWeight / 100)).toFixed(1) + '%';
+    if (s3) s3.textContent = (baseGrade + (100 * examWeight / 100)).toFixed(1) + '%';
 
-    // Calculate needed score
-    const neededForA = ((80 - baseGrade) / (examWeight/100)).toFixed(1);
+    // Score needed for A
+    const neededForA   = examWeight > 0 ? ((80 - baseGrade) / (examWeight / 100)).toFixed(1) : 'N/A';
     const neededScoreEl = document.getElementById('neededScore');
-    if (neededScoreEl) neededScoreEl.textContent = neededForA + '%';
+    if (neededScoreEl) neededScoreEl.textContent = neededForA + (examWeight > 0 ? '%' : '');
 }
 
 // Study Planner
 function addStudySession() {
-    const subject = document.getElementById('plannerSubject')?.value;
-    const topic = document.getElementById('plannerTopic')?.value;
-    const date = document.getElementById('plannerDate')?.value;
-    const duration = document.getElementById('plannerDuration')?.value;
+    const subject  = document.getElementById('plannerSubject')?.value  || '';
+    const topic    = document.getElementById('plannerTopic')?.value    || '';
+    const date     = document.getElementById('plannerDate')?.value     || '';
+    const duration = document.getElementById('plannerDuration')?.value || '1';
 
     if (!topic || !date) {
         showNotification('Please fill in all fields', 'error');
@@ -184,21 +180,20 @@ function addStudySession() {
     const sessionsList = document.getElementById('studySessionsList');
     if (!sessionsList) return;
 
-    const newSession = document.createElement('div');
-    newSession.style.cssText = 'background: var(--white); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center;';
-    
     const subjectIcons = {
-        'Mathematics': '📐',
+        'Mathematics':      '📐',
         'Physical Science': '🧪',
-        'Life Sciences': '🔬',
-        'English': '📖',
-        'IsiZulu': '🗣️'
+        'Life Sciences':    '🔬',
+        'English':          '📖',
+        'IsiZulu':          '🗣️'
     };
 
+    const newSession = document.createElement('div');
+    newSession.style.cssText = 'background:var(--white);padding:1.5rem;border-radius:8px;margin-bottom:1rem;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;';
     newSession.innerHTML = `
         <div>
-            <h4 style="margin-bottom: 0.5rem;">${subjectIcons[subject] || '📚'} ${subject} - ${topic}</h4>
-            <div style="color: var(--text-light); font-size: 0.9rem;">
+            <h4 style="margin-bottom:.5rem;">${subjectIcons[subject] || '📚'} ${subject} – ${topic}</h4>
+            <div style="color:var(--text-light);font-size:.9rem;">
                 <i class="fas fa-calendar"></i> ${new Date(date).toLocaleDateString()} (${duration} hours)
             </div>
         </div>
@@ -206,22 +201,20 @@ function addStudySession() {
             <i class="fas fa-trash"></i> Remove
         </button>
     `;
-
     sessionsList.insertBefore(newSession, sessionsList.firstChild);
 
-    // Clear form
-    const topicInput = document.getElementById('plannerTopic');
-    const dateInput = document.getElementById('plannerDate');
-    const durationInput = document.getElementById('plannerDuration');
-    
-    if (topicInput) topicInput.value = '';
-    if (dateInput) dateInput.valueAsDate = new Date();
-    if (durationInput) durationInput.value = '1';
+    // Reset fields
+    const topicEl    = document.getElementById('plannerTopic');
+    const dateEl     = document.getElementById('plannerDate');
+    const durationEl = document.getElementById('plannerDuration');
+    if (topicEl)    topicEl.value = '';
+    if (dateEl)     dateEl.valueAsDate = new Date();
+    if (durationEl) durationEl.value = '1';
 
     showNotification('Study session added successfully!', 'success');
 }
 
-// Logout Function
+// Logout
 function logout() {
     if (confirm('Are you sure you want to logout?')) {
         localStorage.removeItem('darkMode');
@@ -234,15 +227,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initDashboardNavigation();
     initDarkMode();
     initNotifications();
-    
-    // Set today's date as default in planner
+
+    // Default planner date
     const plannerDate = document.getElementById('plannerDate');
     if (plannerDate) plannerDate.valueAsDate = new Date();
-    
-    // Initialize calculator
-    if (document.getElementById('term1')) {
-        calculateGrade();
-    }
-    
+
+    // Init calculator if present
+    if (document.getElementById('term1')) calculateGrade();
+
     console.log('Dashboard loaded successfully');
 });

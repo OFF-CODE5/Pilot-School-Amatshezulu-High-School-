@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/educators.css">
-    <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Document</title>
+    <title>Educators - AmatsheZulu High School</title>
 </head>
 <body>
+
     <!-- Header -->
     <header>
         <nav>
@@ -21,15 +20,15 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <!--<li><a href="educators.html">Educators</a></li>-->
+                <li><a href="educators.html">Educators</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
                 <li><a href="updates.html">Updates</a></li>
             </ul>
-            <div class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -41,18 +40,21 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Directors Section -->
+
+        <!-- Directors -->
         <section>
             <h2 class="section-title">School Directors</h2>
             <div class="directors-grid">
                 <div class="director-card">
-                    <img src="web_img/user_profile/mdlalose.jpg" alt="Ntuthuko Mdlalose" class="director-image">
+                    <img src="web_img/user_profile/mdlalose.jpg" alt="Ntuthuko Mdlalose" class="director-image"
+                         onerror="this.src='https://ui-avatars.com/api/?name=Ntuthuko+Mdlalose&background=2563eb&color=fff&size=180'">
                     <h3>NTUTHUKO MDLALOSE</h3>
                     <p class="role">School Director</p>
                     <p>Dedicated to fostering academic excellence and innovative learning approaches. Committed to creating an environment where every student can thrive and reach their full potential.</p>
                 </div>
                 <div class="director-card">
-                    <img src="web_img/user_profile/sivile.jpg" alt="Fezile Sivile" class="director-image">
+                    <img src="web_img/user_profile/sivile.jpg" alt="Fezile Sivile" class="director-image"
+                         onerror="this.src='https://ui-avatars.com/api/?name=Fezile+Sivile&background=2563eb&color=fff&size=180'">
                     <h3>FEZILE SIVILE</h3>
                     <p class="role">School Director</p>
                     <p>Passionate about educational innovation and student development. Works tirelessly to ensure quality education and holistic growth for all learners.</p>
@@ -60,83 +62,71 @@
             </div>
         </section>
 
-        <!-- HOD Section -->
+        <!-- HOD -->
         <section>
             <h2 class="section-title">Heads of Department</h2>
             <div class="hod-grid">
                 <div class="educator-card">
-                    <img src="web_img/user_profile/samke.jpg" alt="HOD" class="educator-image">
+                    <img src="web_img/user_profile/samke.jpg" alt="Mathematics HOD" class="educator-image"
+                         onerror="this.src='https://ui-avatars.com/api/?name=HOD+Math&background=60a5fa&color=fff&size=280'">
                     <div class="educator-info">
-                        <h4><i class="fas fa-user-tie" style="color: var(--primary-color); margin-right: 0.5rem;"></i>Department Head</h4>
-                        <p class="department"><i class="fas fa-calculator" style="margin-right: 0.5rem;"></i>Mathematics Department</p>
+                        <h4><i class="fas fa-user-tie" style="color:var(--primary-color);margin-right:.5rem;"></i>Department Head</h4>
+                        <p class="department"><i class="fas fa-calculator" style="margin-right:.5rem;"></i>Mathematics Department</p>
                         <p>Leading the mathematics department with passion and dedication to student success.</p>
                     </div>
                 </div>
                 <div class="educator-card">
-                    <img src="web_img/user_profile/evennt 2.jpg" alt="HOD" class="educator-image">
+                    <img src="web_img/user_profile/evennt 2.jpg" alt="Science HOD" class="educator-image"
+                         onerror="this.src='https://ui-avatars.com/api/?name=HOD+Science&background=60a5fa&color=fff&size=280'">
                     <div class="educator-info">
-                        <h4><i class="fas fa-user-tie" style="color: var(--primary-color); margin-right: 0.5rem;"></i>Department Head</h4>
-                        <p class="department"><i class="fas fa-flask" style="margin-right: 0.5rem;"></i>Science Department</p>
+                        <h4><i class="fas fa-user-tie" style="color:var(--primary-color);margin-right:.5rem;"></i>Department Head</h4>
+                        <p class="department"><i class="fas fa-flask" style="margin-right:.5rem;"></i>Science Department</p>
                         <p>Inspiring scientific curiosity and critical thinking in our students.</p>
                     </div>
                 </div>
                 <div class="educator-card">
-                    <img src="web_img/user_profile/logo 1.jpg" alt="HOD" class="educator-image">
+                    <img src="web_img/user_profile/logo 1.jpg" alt="Languages HOD" class="educator-image"
+                         onerror="this.src='https://ui-avatars.com/api/?name=HOD+Languages&background=60a5fa&color=fff&size=280'">
                     <div class="educator-info">
-                        <h4><i class="fas fa-user-tie" style="color: var(--primary-color); margin-right: 0.5rem;"></i>Department Head</h4>
-                        <p class="department"><i class="fas fa-language" style="margin-right: 0.5rem;"></i>Languages Department</p>
+                        <h4><i class="fas fa-user-tie" style="color:var(--primary-color);margin-right:.5rem;"></i>Department Head</h4>
+                        <p class="department"><i class="fas fa-language" style="margin-right:.5rem;"></i>Languages Department</p>
                         <p>Fostering communication skills and cultural appreciation through language education.</p>
                     </div>
                 </div>
                 <div class="educator-card">
-                    <img src="web_img/user_profile/ford.jpg" alt="HOD" class="educator-image">
+                    <img src="web_img/user_profile/ford.jpg" alt="Humanities HOD" class="educator-image"
+                         onerror="this.src='https://ui-avatars.com/api/?name=HOD+Humanities&background=60a5fa&color=fff&size=280'">
                     <div class="educator-info">
-                        <h4><i class="fas fa-user-tie" style="color: var(--primary-color); margin-right: 0.5rem;"></i>Department Head</h4>
-                        <p class="department"><i class="fas fa-globe" style="margin-right: 0.5rem;"></i>Humanities Department</p>
+                        <h4><i class="fas fa-user-tie" style="color:var(--primary-color);margin-right:.5rem;"></i>Department Head</h4>
+                        <p class="department"><i class="fas fa-globe" style="margin-right:.5rem;"></i>Humanities Department</p>
                         <p>Developing critical thinking and understanding of society and culture.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Grade Educators Section -->
+        <!-- Teaching Staff -->
         <section class="educators-container">
             <h2 class="section-title">Our Teaching Staff</h2>
-            
+
             <div class="grade-section">
                 <h3>Grade 8 Educators</h3>
                 <div class="educators-grid">
                     <div class="educator-card">
-                        <img src="web_img/user_profile/event 1.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Mathematics & Science</p>
-                            <p>Passionate about making complex concepts accessible to students.</p>
-                        </div>
+                        <img src="web_img/user_profile/event 1.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Mathematics &amp; Science</p><p>Passionate about making complex concepts accessible to students.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="web_img/user_profile/event 3.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Languages</p>
-                            <p>Dedicated to developing strong communication skills in learners.</p>
-                        </div>
+                        <img src="web_img/user_profile/event 3.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Languages</p><p>Dedicated to developing strong communication skills in learners.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="web_img/user_profile/event 4.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Social Sciences</p>
-                            <p>Helping students understand the world around them.</p>
-                        </div>
+                        <img src="web_img/user_profile/event 4.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Social Sciences</p><p>Helping students understand the world around them.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="web_img/user_profile/slwane.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Creative Arts</p>
-                            <p>Nurturing creativity and artistic expression in students.</p>
-                        </div>
+                        <img src="web_img/user_profile/slwane.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Creative Arts</p><p>Nurturing creativity and artistic expression in students.</p></div>
                     </div>
                 </div>
             </div>
@@ -145,100 +135,61 @@
                 <h3>Grade 9 Educators</h3>
                 <div class="educators-grid">
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Natural Sciences</p>
-                            <p>Inspiring scientific inquiry and discovery.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Natural Sciences</p><p>Inspiring scientific inquiry and discovery.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Technology</p>
-                            <p>Preparing students for the digital future.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Technology</p><p>Preparing students for the digital future.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">EMS</p>
-                            <p>Building foundational business and economic understanding.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">EMS</p><p>Building foundational business and economic understanding.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Life Orientation</p>
-                            <p>Supporting holistic student development and wellbeing.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Life Orientation</p><p>Supporting holistic student development and wellbeing.</p></div>
                     </div>
                 </div>
             </div>
 
             <div class="grade-section">
-                <h3>Senior Phase Educators (Grades 10-12)</h3>
+                <h3>Senior Phase Educators (Grades 10–12)</h3>
                 <div class="educators-grid">
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Physical Sciences</p>
-                            <p>Guiding students through advanced scientific concepts.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Physical Sciences</p><p>Guiding students through advanced scientific concepts.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Life Sciences</p>
-                            <p>Exploring the wonders of biology with passion.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Life Sciences</p><p>Exploring the wonders of biology with passion.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Business Studies</p>
-                            <p>Preparing future business leaders and entrepreneurs.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Business Studies</p><p>Preparing future business leaders and entrepreneurs.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Tourism</p>
-                            <p>Opening doors to the world of hospitality and tourism.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Tourism</p><p>Opening doors to the world of hospitality and tourism.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">History</p>
-                            <p>Bringing the past to life for today's learners.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">History</p><p>Bringing the past to life for today's learners.</p></div>
                     </div>
                     <div class="educator-card">
-                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image">
-                        <div class="educator-info">
-                            <h4>Educator Name</h4>
-                            <p class="department">Geography</p>
-                            <p>Exploring our world and environmental stewardship.</p>
-                        </div>
+                        <img src="userProfile/profile.jpg" alt="Educator" class="educator-image" onerror="this.src='https://ui-avatars.com/api/?name=Educator&background=60a5fa&color=fff'">
+                        <div class="educator-info"><h4>Educator Name</h4><p class="department">Geography</p><p>Exploring our world and environmental stewardship.</p></div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024-2025 AmatsheZulu High School. All Rights Reserved.</p>
+            <p>&copy; 2024–2025 AmatsheZulu High School. All Rights Reserved.</p>
         </div>
         <div class="footer-bottom">
             <p>Empowering minds, shaping futures</p>
@@ -246,10 +197,6 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/dashboard.js"></script>
     <script src="js/educators.js"></script>
 </body>
-
 </html>
-
-

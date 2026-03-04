@@ -1,25 +1,38 @@
+/* ========================================
+   SUBJECT DETAIL JAVASCRIPT
+   ======================================== */
+
 // Tab functionality
-        const tabs = document.querySelectorAll('.tab');
-        const tabContents = document.querySelectorAll('.tab-content');
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tabContents.forEach(tc => tc.classList.remove('active'));
-                
-                tab.classList.add('active');
-                document.getElementById(tab.dataset.tab).classList.add('active');
-            });
-        });
+        tab.classList.add('active');
+        const target = document.getElementById(tab.dataset.tab);
+        if (target) target.classList.add('active');
+    });
+});
 
-        // Download functionality
-        document.querySelectorAll('.download-icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                alert('Downloading resource...');
-            });
-        });
+// Download functionality
+document.querySelectorAll('.download-icon').forEach(icon => {
+    icon.addEventListener('click', () => {
+        if (typeof showNotification === 'function') {
+            showNotification('Downloading resource...', 'info');
+        } else {
+            alert('Downloading resource...');
+        }
+    });
+});
 
-        // Contact teacher
-        document.querySelector('.contact-btn').addEventListener('click', () => {
+// Contact teacher — guard against missing element
+const contactBtn = document.querySelector('.contact-btn');
+if (contactBtn) {
+    contactBtn.addEventListener('click', () => {
+        if (typeof showNotification === 'function') {
+            showNotification('Opening email to contact Mrs. Nkosi...', 'success');
+        } else {
             alert('Opening email client to contact Mrs. Nkosi...');
-        });
+        }
+    });
+}
